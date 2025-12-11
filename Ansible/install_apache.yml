@@ -1,0 +1,22 @@
+---
+- name: Installeer en configureer Apache Webserver
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt en installeer Apache2
+      apt:
+        name: apache2
+        state: present
+        update_cache: yes
+
+    - name: Zorg dat Apache draait
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Plaats de index.html pagina
+      template:
+        src: index.html.j2
+        dest: /var/www/html/index.html
+        mode: '0644'

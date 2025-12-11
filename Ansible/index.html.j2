@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible oefening</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #f4f4f4; }
+        .box { background: white; padding: 20px; border-radius: 8px; display: inline-block; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #005073; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Welkom op de server van Glenn</h1>
+        <p><strong>Datum:</strong> {{ ansible_date_time.date }}</p>
+        <p><strong>Tijd:</strong> {{ ansible_date_time.time }}</p>
+        <hr>
+        <h3>Mijn Woonplaats: Dilbeek</h3>
+        <iframe 
+            width="400" height="300" frameborder="0" style="border:0" 
+            src="https://www.google.com/maps?q=Dilbeek,Belgium&output=embed">
+        </iframe>
+    </div>
+</body>
+</html>
