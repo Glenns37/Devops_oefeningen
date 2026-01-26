@@ -1,0 +1,15 @@
+---
+- name: A3 - Eigen Experiment 2 (Andere Server - Database)
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: 1. Installeer MariaDB Server
+      apt:
+        name: mariadb-server
+        state: latest
+
+    - name: 2. Zorg dat de Database service draait
+      service:
+        name: mariadb
+        state: started
+        enabled: yes

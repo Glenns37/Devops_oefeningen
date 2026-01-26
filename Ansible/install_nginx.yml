@@ -1,0 +1,19 @@
+---
+- name: A2 - Eigen Experiment (Webserver Nginx)
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: 1. Update de software lijst
+      apt:
+        update_cache: yes
+
+    - name: 2. Installeer Nginx Webserver
+      apt:
+        name: nginx
+        state: latest
+
+    - name: 3. Zorg dat Nginx aan staat
+      service:
+        name: nginx
+        state: started
+        enabled: yes
