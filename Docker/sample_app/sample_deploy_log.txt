@@ -1,0 +1,255 @@
+2026-01-26 21:25:20 - --- START DEPLOYMENT SCRIPT ---
+2026-01-26 21:25:20 - Stap 1: Oude containers opruimen...
+2026-01-26 21:25:21 - Stap 2: Docker Image bouwen (sample_app_image)...
+Sending build context to Docker daemon  11.32MB
+Step 1/7 : FROM python:3.9-slim
+ ---> 085da638e1b8
+Step 2/7 : WORKDIR /home/sample_app
+ ---> Using cache
+ ---> c8581c37bf79
+Step 3/7 : RUN pip install --no-cache-dir --progress-bar off flask
+ ---> Using cache
+ ---> c34b6535fbcd
+Step 4/7 : COPY . /home/sample_app
+ ---> 3b8874a0d8d5
+Step 5/7 : EXPOSE 5050
+ ---> Running in da4f322292f9
+Removing intermediate container da4f322292f9
+ ---> 40eadcd6b0c6
+Step 6/7 : EXPOSE 5555
+ ---> Running in 93f6da9f185b
+Removing intermediate container 93f6da9f185b
+ ---> fcf77ba830de
+Step 7/7 : CMD ["python", "sample_app.py"]
+ ---> Running in ba1d47056f27
+Removing intermediate container ba1d47056f27
+ ---> 9b003dd635b3
+Successfully built 9b003dd635b3
+Successfully tagged sample_app_image:latest
+2026-01-26 21:25:29 - Stap 3: Container starten op poort 5050...
+2026-01-26 21:25:36 - SUCCESS: Container 'sample_app_container' draait succesvol!
+2026-01-26 21:25:36 - App is bereikbaar op http://localhost:5050
+--- Container Details ---
+[
+    {
+        "Id": "6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677",
+        "Created": "2026-01-26T21:25:29.811958648Z",
+        "Path": "python",
+        "Args": [
+            "sample_app.py"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 42943,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-01-26T21:25:32.654535118Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:9b003dd635b3b5b38adf26209b0fd46a749583aca4a65c96344eb80f3d691720",
+        "ResolvConfPath": "/var/lib/docker/containers/6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677/hostname",
+        "HostsPath": "/var/lib/docker/containers/6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677/hosts",
+        "LogPath": "/var/lib/docker/containers/6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677/6c471cf88ac55bfc8b776984a6850e81cc184ef7c565cbf7d7824013d65b8677-json.log",
+        "Name": "/sample_app_container",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "default",
+            "PortBindings": {
+                "5050/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "5050"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "Capabilities": null,
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/94870e3c2b3abd0b07fa65a3784fbcd1daf5256b24a29d82e291c0ab7fe81ffe-init/diff:/var/lib/docker/overlay2/1b70c79c9e6f7ffe6517f1e61c05e048d3cdf4b84033e8e28b5e6ea368885f4a/diff:/var/lib/docker/overlay2/bbada9866417fa8e09368bdf693243646ee786805b472f4c9ce633311e918ad2/diff:/var/lib/docker/overlay2/59999b2d032167ea01885954f9e0c2a694254c5f69b9b5286e00ddae534d0b12/diff:/var/lib/docker/overlay2/0f113f9e2d54b01813438980049e90c917051133c571691fded5b15c1cc981ca/diff:/var/lib/docker/overlay2/acfa696f80b6be90aeaa64e997442ba6b802b3a549198b889b8268363902f10c/diff:/var/lib/docker/overlay2/d57506a5cb107f2295622d4e77f7924eec73209dda6ca6e099e73efa9928d03e/diff:/var/lib/docker/overlay2/8bc5dd9352cdc4e9f9a66e269166645f4ea58643a0e3b738b33d4650db6fbe08/diff",
+                "MergedDir": "/var/lib/docker/overlay2/94870e3c2b3abd0b07fa65a3784fbcd1daf5256b24a29d82e291c0ab7fe81ffe/merged",
+                "UpperDir": "/var/lib/docker/overlay2/94870e3c2b3abd0b07fa65a3784fbcd1daf5256b24a29d82e291c0ab7fe81ffe/diff",
+                "WorkDir": "/var/lib/docker/overlay2/94870e3c2b3abd0b07fa65a3784fbcd1daf5256b24a29d82e291c0ab7fe81ffe/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "6c471cf88ac5",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "5050/tcp": {},
+                "5555/tcp": {}
+            },
+            "Tty": true,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=E3FF2839C048B25C084DEBE9B26995E310250568",
+                "PYTHON_VERSION=3.9.25",
+                "PYTHON_SHA256=00e07d7c0f2f0cc002432d1ee84d2a40dae404a99303e3f97701c10966c91834"
+            ],
+            "Cmd": [
+                "python",
+                "sample_app.py"
+            ],
+            "Image": "sample_app_image",
+            "Volumes": null,
+            "WorkingDir": "/home/sample_app",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {}
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "0c9e493bc2820b524b3cfc42cd91fbe015891ecc10c96cfb3b5ef295be01c6fb",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "5050/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "5050"
+                    }
+                ],
+                "5555/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/0c9e493bc282",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "2aecd824f82a8cf1b2406f6a9e7b8ed882048c7ce5aa654cf107e20e67defea9",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "NetworkID": "c60c5f9847afa296b025219ba5e21f51cdff4384baabe0167e57d29c157fa79a",
+                    "EndpointID": "2aecd824f82a8cf1b2406f6a9e7b8ed882048c7ce5aa654cf107e20e67defea9",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+2026-01-26 21:25:36 - --- EINDE SCRIPT ---
