@@ -17,3 +17,7 @@
         name: nginx
         state: started
         enabled: yes
+    - name: 4. Maak een eigen Nginx pagina
+      copy:
+        content: "<h1>Dit is Nginx (Opdracht A2)</h1><p>En Apache is nu weg!</p>"
+        dest: /var/www/html/index.html
