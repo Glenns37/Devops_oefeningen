@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'J2 Experiment: Bezig met compileren...'
+                sh 'echo "Dit is de build stap" > build_log.txt'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'J2 Experiment: Automatische tests draaien...'
+                sh 'grep "build" build_log.txt' // Simpele test of het bestand tekst bevat
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'J2 Experiment: Uitrollen naar productie!'
+                echo 'SUCCESS: Pipeline J2 is geslaagd.'
+            }
+        }
+    }
+}
