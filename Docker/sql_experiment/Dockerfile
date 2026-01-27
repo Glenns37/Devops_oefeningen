@@ -1,0 +1,3 @@
+FROM postgres:13-alpine
+ENV POSTGRES_PASSWORD=Cisco123
+ENV POSTGRES_DB=test_db
