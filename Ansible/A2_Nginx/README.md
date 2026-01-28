@@ -27,3 +27,7 @@ Het playbook voert automatisch de volgende 4 taken uit (zoals gedefinieerd in de
 1. Ga naar de map:
    ```bash
    cd ~/labs/"Opdrachten devops"/Ansible/A2_Nginx
+
+2. Run het playbook:
+```bash
+   ansible-playbook install_nginx.yml
