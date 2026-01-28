@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Ap4 Webform</title></head>
+<body>
+    <h2>Ap4 Experiment: Webforms</h2>
+    
+    <form method="POST">
+        Naam: <input type="text" name="gebruiker"><br><br>
+        Bericht: <textarea name="bericht"></textarea><br><br>
+        <input type="submit" value="Verstuur">
+    </form>
+
+    <hr>
+    
+    {% if ontvangen %}
+        <h3>Ontvangen Data:</h3>
+        <p>Gebruiker: <b>{{ ontvangen.naam }}</b></p>
+        <p>Bericht: <i>{{ ontvangen.msg }}</i></p>
+    {% endif %}
+</body>
+</html>
